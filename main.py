@@ -1,16 +1,33 @@
-# This is a sample Python script.
+from matplotlib import pyplot as plt
+from matplotlib.cbook import flatten
+import numpy as np
+import smallest
+import flatten
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+e = 2.71828
+pi = 3.14159
+
+def run():
+
+    print(smallest.smallestModelParamClass.m)
+    print(flatten.flattenModelParamClass.m)
+
+    x = np.linspace(0,1)
+    y2 = eval(smallest.smallestModelParamClass.m)
+    yy = eval(flatten.flattenModelParamClass.m)
+    # y1 = 1 - 0.5 * np.cos(2*pi*x)
+
+    # plot the rho distribution of two models
+    plt.plot(x, y2, label='smallest')
+    plt.plot(x, yy, label='flatten')
+    plt.xlabel('x')
+    plt.ylabel('m')
+    plt.title('rho vs x')
+    plt.legend()
+    plt.show()
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    run()
