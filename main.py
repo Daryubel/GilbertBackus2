@@ -1,5 +1,4 @@
 from matplotlib import pyplot as plt
-from matplotlib.cbook import flatten
 import numpy as np
 import smallest
 import flatten
@@ -15,11 +14,12 @@ def run():
     x = np.linspace(0,1)
     y2 = eval(smallest.smallestModelParamClass.m)
     yy = eval(flatten.flattenModelParamClass.m)
-    # y1 = 1 - 0.5 * np.cos(2*pi*x)
+    y1 = 1 - 0.5 * np.cos(2*pi*x)
 
     # plot the rho distribution of two models
     plt.plot(x, y2, label='smallest')
     plt.plot(x, yy, label='flatten')
+    plt.plot(x, y1, label='original')
     plt.xlabel('x')
     plt.ylabel('m')
     plt.title('rho vs x')

@@ -1,4 +1,5 @@
 
+from random import random
 import numpy as np
 from sympy import Symbol, cos, integrate, solve
 import smallest
@@ -44,7 +45,10 @@ class flattenModelParamClass:
     for i in range(0,11):
         y[i] = 0.5 * flattenModelFunctionClass.hVal[i] - smallest.smallestModelParamClass.d[i]
     
-    print(y)
+    # generate interfered y vector
+    yInterfered = np.zeros(11)
+    for i in y:
+        yInterfered = y + random()*0.1*y
     
     # H matrix
     matrixH = np.zeros((11,11))

@@ -1,4 +1,5 @@
 
+from random import random, randrange
 import numpy as np
 from sympy import Symbol, cos, integrate
 
@@ -37,6 +38,11 @@ class smallestModelParamClass:
         d[i] = integrate(smallestModelFunctionClass.m(smallestModelFunctionClass.x) * smallestModelFunctionClass.g(i+1, smallestModelFunctionClass.x), 
                         (smallestModelFunctionClass.x, 0, 1))
     
+    # generate interfered d vector
+    dInterfered = np.zeros(11)
+    for i in d:
+        dInterfered = d + random()*0.1*d
+
     # G matrix
     matrixG = np.zeros((11,11))
     for j in range(0, 11):
