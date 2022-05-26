@@ -48,7 +48,7 @@ class flattenModelParamClass:
     # generate interfered y vector
     yInterfered = np.zeros(11)
     for i in y:
-        yInterfered = y + random()*0.1*y
+        yInterfered = y + random()*0.1*i
     
     # H matrix
     matrixH = np.zeros((11,11))

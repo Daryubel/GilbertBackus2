@@ -41,7 +41,7 @@ class smallestModelParamClass:
     # generate interfered d vector
     dInterfered = np.zeros(11)
     for i in d:
-        dInterfered = d + random()*0.1*d
+        dInterfered = d + random()*0.1*i
 
     # G matrix
     matrixG = np.zeros((11,11))
